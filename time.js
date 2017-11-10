@@ -4,10 +4,13 @@ var date = new Date();
 
 var time = function (str) {
   
+
   if (/^\/api\/parsetime/.test(str)) {
-    natural = prsTime(str);
+    console.log('nat');
+    unix = unxTime(str);
   } else if (/^\/api\/unixtime/.test(str)) {
-    unix = unxTime(Number(str));
+    console.log('unix');
+    natural = prsTime(str);
   }
   
   return  { "unix": (unix || str), "natural": (natural || str)  };
@@ -17,8 +20,9 @@ function prsTime() {
   
 }
 
-function unxTime(time) {
-  return date.getTime(time);
+function unxTime(tm) {
+  console.log(tm);
+  return date.getTime(tm);
 }
 
 
