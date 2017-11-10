@@ -22,7 +22,7 @@ if (!process.env.DISABLE_XORIGIN) {
     next();
   });
 }
-console.log(jData);
+
 app.use('/public', express.static(process.cwd() + '/public'));
 
 app.route('/_api/package.json')
@@ -57,4 +57,9 @@ app.use(function(err, req, res, next) {
 
 app.listen(process.env.PORT, function () {
   console.log('Node.js listening ...');
+});
+
+
+app.get('/:dataString', function(req, res) {
+  console.log('yo');
 });
