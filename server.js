@@ -9,7 +9,7 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 
-//var time = require("./util/time.js");
+var time = require("./time.js");
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
@@ -42,8 +42,8 @@ app.route('/')
 
 app.get('/:time', function (req, res) {
   //res.send(req.params);
-  res.type('txt').send(req.params.time);
-  console.log()
+  res.type('txt').send(time(req.params.time));
+  console.log(req.params.time);
 });
 
 // Respond not found to all the wrong routes
