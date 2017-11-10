@@ -3,14 +3,14 @@ var natural, unix;
 var date = new Date();
 
 var time = function (str) {
-  console.log(Number(str[0]));
 
   if (Number(str[0]) >= 0) {
     console.log('nat');
     natural = prsTime(str);    
   } else {
     console.log('unix');
-    unix = unxTime(Number(str));
+    unix = unxTime(str);
+    console.log(unix);
   }
   
   return  { "unix": (unix || str), "natural": (natural || str)  };
