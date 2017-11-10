@@ -8,6 +8,7 @@
 var fs = require('fs');
 var express = require('express');
 var app = express();
+var jData = 'yo';
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
@@ -21,7 +22,7 @@ if (!process.env.DISABLE_XORIGIN) {
     next();
   });
 }
-
+console.log(jData);
 app.use('/public', express.static(process.cwd() + '/public'));
 
 app.route('/_api/package.json')
@@ -36,6 +37,7 @@ app.route('/_api/package.json')
 app.route('/')
     .get(function(req, res) {
 		  res.sendFile(process.cwd() + '/views/index.html');
+      jData = req;
     })
 
 // Respond not found to all the wrong routes
