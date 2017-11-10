@@ -41,9 +41,7 @@ app.route('/')
     })
 
 app.get('/:time', function (req, res) {
-  //res.send(req.params);
-  res.type('txt').send(time(req.params.time));
-  console.log(req.params.time);
+  res.type('json').send(time(req.params.time));
 });
 
 // Respond not found to all the wrong routes
