@@ -2,7 +2,7 @@ var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'A
 
 var time = function (str) {
   var natural, unix;
-  
+    
   if (/^[0-9]*$/g.test(str)) {
     console.log('num');
     natural = prsTime(str);    
@@ -20,12 +20,16 @@ var time = function (str) {
 
 function prsTime(tm) {
   var date = new Date(tm*1000);
-  console.log(date);
-  var year = date.getFullYear(tm);
+  
+  if (date) {
+    var year = date.getFullYear(tm);
   var month = date.getMonth(tm);
   var day = date.getDate(tm);
   
   return months[month]+' '+day+', '+year;
+  } else {
+    return null;
+  }
 }
 
 function unxTime(tm) {
