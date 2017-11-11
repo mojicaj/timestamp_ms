@@ -3,7 +3,9 @@ var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'A
 var time = function (str) {
   var natural, unix;
 
-  console.log(str);
+  if () {
+      
+      }
   
   if (Number(str[0]) >= 0) {
     natural = prsTime(str);    
