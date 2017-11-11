@@ -5,9 +5,10 @@ var time = function (str) {
     natural = prsTime(str);    
   } else {
     unix = unxTime(str);
+    natural = prsTime(unix);
   }
   
-  if ( !natural && !unix ) {
+  if ( !natural && !unix || typeof(unix) != 'Number' ) {
     return  { "unix": 'null', "natural": 'null' };
   } else {
     return  { "unix": (unix || str), "natural": (natural || str) };
