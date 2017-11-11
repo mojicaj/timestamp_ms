@@ -1,5 +1,3 @@
-var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
 var time = function (str) {
   var natural, unix;
     
@@ -18,6 +16,7 @@ var time = function (str) {
 }
 
 function prsTime(tm) {
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var date = new Date(tm*1000);
   console.log(date);
   
