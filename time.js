@@ -1,6 +1,10 @@
+var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
 var time = function (str) {
   var natural, unix;
-    
+
+  console.log(str);
+  
   if (Number(str[0]) >= 0) {
     natural = prsTime(str);    
   } else {
@@ -21,7 +25,6 @@ var time = function (str) {
 
 function prsTime(tm) {
   var date = new Date(tm*1000);
-  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   
   var year = date.getFullYear(tm);
   var month = date.getMonth(tm);
