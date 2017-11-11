@@ -13,7 +13,11 @@ var time = function (str) {
     console.log(unix);
   }
   
-  return  { "unix": (unix || str), "natural": (natural || str)  };
+  if ( !natural && !unix ) {
+    return  { "unix": 'null', "natural": 'null' };
+  } else {
+    return  { "unix": (unix || str), "natural": (natural || str) };
+  }
 }
 
 function prsTime(tm) {
