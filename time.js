@@ -3,15 +3,12 @@ var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'A
 var time = function (str) {
   var natural, unix;
   
-  if (Number(str[0]) >= 0) {
+  if (/^[0-9]*$/g.test(str)) {
+    console.log('num');
     natural = prsTime(str);    
   } else {
     unix = unxTime(str);
-    if ( isNaN(unix)) {
-      unix;
-    } else {
-      natural = prsTime(unix);
-    }
+    natural = prsTime(unix);    
   }
   
   if ( !natural && !unix ) {
@@ -23,7 +20,7 @@ var time = function (str) {
 
 function prsTime(tm) {
   var date = new Date(tm*1000);
-  
+  console.log(date);
   var year = date.getFullYear(tm);
   var month = date.getMonth(tm);
   var day = date.getDate(tm);
