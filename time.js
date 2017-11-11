@@ -5,10 +5,12 @@ var time = function (str) {
     natural = prsTime(str);    
   } else {
     unix = unxTime(str);
+    //unix = (typeof(unix) == 'Number')
     natural = prsTime(unix);
   }
   
-  if ( !natural && !unix || typeof(unix) != 'Number' ) {
+  console.log(isNaN(unix));
+  if ( !natural && !unix ) {
     return  { "unix": 'null', "natural": 'null' };
   } else {
     return  { "unix": (unix || str), "natural": (natural || str) };
