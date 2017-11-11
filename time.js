@@ -3,7 +3,7 @@ var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'A
 var time = function (str) {
   var natural, unix;
 
-  if () {
+  if (/\/.test(str)) {
       
       }
   
