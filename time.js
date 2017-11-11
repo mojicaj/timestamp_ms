@@ -21,11 +21,15 @@ var time = function (str) {
 }
 
 function prsTime(tm) {
+  var dt = Date.parse(tm);
+  console.log(dt);
+  //var dt = date.getTime(tm);
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var year = date.getFullYear(tm);
   var month = date.getMonth(tm);
   var day = date.getDate(tm);
-  return String(months[month]+' '+day+', '+year);
+  console.log(year);
+  return months[month]+' '+day+', '+year;
 }
 
 function unxTime(tm) {
