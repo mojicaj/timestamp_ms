@@ -1,16 +1,10 @@
-
-var natural, unix;
-var date = new Date();
-
 var time = function (str) {
-
+  var natural, unix;
+  
   if (Number(str[0]) >= 0) {
-    console.log('nat');
     natural = prsTime(str);    
   } else {
-    console.log('unix');
     unix = unxTime(str);
-    console.log(unix);
   }
   
   if ( !natural && !unix ) {
@@ -21,14 +15,13 @@ var time = function (str) {
 }
 
 function prsTime(tm) {
-  var dt = Date.parse(tm);
-  console.log(dt);
-  //var dt = date.getTime(tm);
+  var date = new Date(tm*1000);  
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  
   var year = date.getFullYear(tm);
   var month = date.getMonth(tm);
   var day = date.getDate(tm);
-  console.log(year);
+  
   return months[month]+' '+day+', '+year;
 }
 
