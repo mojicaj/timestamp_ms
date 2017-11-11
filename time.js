@@ -25,8 +25,7 @@ function prsTime(tm) {
 }
 
 function unxTime(tm) {
-  console.log(tm);
-  return Math.round(date.getTime(tm)/1000);
+  return Date.parse(tm)/1000;
 }
 
 
