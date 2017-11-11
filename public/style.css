@@ -43,6 +43,7 @@ img {
 blockquote {
   border-left: 5px solid black;
   padding: 5px 20px;
+  margin-left: 0;
 }
 
 p {
@@ -51,5 +52,6 @@ p {
 
 code {
   background: white;
-  color: red;
+  color: #c92427;
+  font-size: .85em;
 }
