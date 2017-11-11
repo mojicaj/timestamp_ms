@@ -3,8 +3,9 @@ var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'A
 var time = function (str) {
   var natural, unix;
 
+  console.log(str.indexOf(/\s\W/));
   if (/\s/.test(str)) {
-    console.log(str.indexof(/\s/));
+    
   }
   
   if (Number(str[0]) >= 0) {
